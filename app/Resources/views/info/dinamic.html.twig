@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <br>
+    <br>
+    <select id="blabla">
+        {% for dat in data %}
+            {% for k in dat %}
+                <option>{{ k }}</option>
+            {% endfor %}
+        {% endfor %}
+    </select>
+
+    <table class="testTable" id="resultTable">
+        <tbody>
+
+        </tbody>
+    </table>
+
+{% endblock %}

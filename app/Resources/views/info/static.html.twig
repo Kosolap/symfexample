@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% if data|length > 0 %}
+    <table class="testTable">
+        <tr>
+            {% for title in titles %}
+                <th>{{ title }}</th>
+            {% endfor %}
+        </tr>
+        {% for el in data %}
+            <tr>
+                {% for inf in callData %}
+
+                   <td>
+                        {% if el.getData(inf).timestamp is defined %}
+                        {{ el.getData(inf)|date('m/d/Y') }}
+                        {% else %}
+                        {{ el.getData(inf) }}
+                        {% endif %}
+                   </td>
+
+                {% endfor %}
+
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+    <br/>
+
+
+
+
+
+{% endblock %}

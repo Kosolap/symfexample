@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+
+        {# JQuery#}
+        <script src="{{ asset('assets/jquery/dist/jquery.min.js') }}"> </script>
+
+        {# Bootstrap #}
+        <link rel="stylesheet" href="{{ asset('/assets/bootstrap/dist/css/bootstrap.min.css') }}" />
+        <script src="{{ asset('assets/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+        {# JQuery UI#}
+        <link rel="stylesheet" href="{{ asset('assets/jquery-ui/themes/base/jquery-ui.min.css') }}">
+        <script src="{{ asset('assets/jquery-ui/jquery-ui.min.js') }}"></script>
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
+        <script src="{{ asset('js/main.js') }}"></script>
+
+
+    </head>
+    <body>
+        <div>
+            <ul class="dropdown">
+
+                <li class="dropdown-top">
+                    <a class="dropdown-top" href="/">Справочники</a>
+                    <ul class="dropdown-inside">
+                        <li><a href="{{ path('User') }}">Пользователи</a></li>
+                        <li><a href="{{ path('Region') }}">Регионы</a></li>
+                        <li><a href="{{ path('Reason') }}">Причины</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <br/>
+        <div>
+            {% block body %}{% endblock %}
+        </div>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
